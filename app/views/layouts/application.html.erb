@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socially</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav id = "navbar">
+
+      <%= link_to "Home", root_path , class: "nav-link" %>
+
+      <% if current_user %>
+        <span id="signed_in_as"> Signed in as <strong> <%= link_to current_user.name,current_user %> </strong> </span>
+        <%= link_to "Sign Out", destroy_user_session_path ,method: :delete, class: "nav-link nav-link-right" %>
+        <%= link_to "New Post", new_post_path, class: "nav-link nav-link-right"%>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path, class: "nav-link nav-link-right" %>
+        <%= link_to "Sign Up", new_user_registration_path , class: "nav-link nav-link-right"%>
+      <% end %>
+
+      <%= link_to "Users Profiles" , users_path , class: "nav-link nav-link-right"%>
+
+    </nav>
+
+    <div class="main-wrapper">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+  </body>
+</html>

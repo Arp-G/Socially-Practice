@@ -1,0 +1,34 @@
+
+<div class="form_errors">
+
+	<% if @post.errors.count >0 %>
+
+		<b> <%= pluralize(@post.errors.count,"error") %> </b> prevented the post from being saved 
+
+		<ul>
+			<% @post.errors.full_messages.each do |msg| %>
+				<li> <%= msg %> </li>
+			<% end %>
+		</ul>
+		
+	<% end %>
+
+</div>
+
+<%= form_for @post do |f| %>
+
+	<p>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</p>
+
+	<p>
+		<%= f.label :content %>
+		<%= f.text_area :content , placeholder: "Write your post here..." %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>

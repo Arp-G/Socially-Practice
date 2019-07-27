@@ -1,0 +1,8 @@
+<%= form_tag(posts_search_path,method: :get) do %>
+	<p>
+		<%= text_field_tag :search , nil,placeholder: "Enter search query here..." ,required: :true %>
+		<br><br>
+		<%= submit_tag "Search !" %>
+	</p>
+
+<% end %>

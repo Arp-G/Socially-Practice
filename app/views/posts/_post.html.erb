@@ -1,0 +1,7 @@
+<div class="post">
+	<%= link_to post.title, post %> <br>
+	<p> Posted by <strong> <%= post.user.name %> </strong> </p>
+	<p> Posted <%= time_ago_in_words(post.created_at) %> ago </p>
+	<hr>
+</div>
+	

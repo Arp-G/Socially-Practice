@@ -1,0 +1,12 @@
+<h1> Posts </h1>
+
+<h2> Search Posts ! </h2>
+
+<%= render "search_form" %>
+
+<% @posts.each do |post| %>
+	<%= render post %>
+<% end %>
+
+
+

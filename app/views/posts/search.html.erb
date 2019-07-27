@@ -1,0 +1,17 @@
+<h1> Search Results </h1>
+
+<div> <strong> <%= pluralize(@matches.count,"match") %></strong> for your search query </div>
+
+<% @matches.each do |post| %>
+
+	<div class="post">
+		<%= link_to post.title, post %> <br>
+
+		<p> Posted by <strong> <%= post.user.name %> </strong> </p>
+
+		<p> Posted <strong> <%= time_ago_in_words(post.created_at) %> ago </strong></p>
+	</div>
+
+<% end %>
+
+<%= link_to "Back" ,root_path %> 

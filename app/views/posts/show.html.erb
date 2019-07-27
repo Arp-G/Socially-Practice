@@ -1,0 +1,28 @@
+<h1> <%= @post.title %> </h1>
+
+<p> <%= @post.content %> </p>
+
+<p> Posted by <strong> <%= @post.user.name %> </strong> </p>
+
+<p> Posted <strong><%= time_ago_in_words(@post.created_at) %> ago </strong></p>
+
+<div class = "post_links">
+	<% if current_user and current_user.id == @post.user_id %>
+		<%= link_to "Edit", edit_post_path(@post) %>
+		<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm:"Are you sure ?"} %>
+	<% end %>
+</div>
+
+<h3> Comments: </h3>
+
+<div class = "comment_count"> <strong> <%= pluralize(@post.comments.count,"comment") %> </strong> for this post </div>
+
+<%= render "comments/form" %>
+
+<div class = "comment_wrapper">
+	<% @post.comments.each do |comment| %>
+		<% if comment.user %>
+			<%= render comment %>
+		<% end %>
+	<% end %>
+</div>

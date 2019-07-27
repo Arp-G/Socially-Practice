@@ -1,0 +1,23 @@
+<h1> <%= @user.name %>'s Profile </h1>
+
+<div> 
+	<%= @user.name %> is on Socially since <%= @user.created_at.strftime("%d-%m-%y") %> <br>
+
+	<%= @user.name %> has posted  
+	<strong><%= pluralize(@user.posts.count,"time") %></strong> and has commented 
+	<strong><%= pluralize(@user.comments.count,"time") %> </strong> <br>
+
+	<% if current_user and @user.id == current_user.id %>
+		<%= link_to "Edit profile" , edit_user_registration_path(@user) %> 
+	<% end %>
+
+</div>
+
+<br>
+
+<h3> <%= @user.name %>'s Posts </h3>
+
+<% @user.posts.each do |post| %>
+	<%= render post %>
+<% end %>
+

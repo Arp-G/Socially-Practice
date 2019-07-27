@@ -1,0 +1,66 @@
+/* 
+
+  Important use margin:auto; for horizontal alignment and use position:realtive for vertical alignment
+
+*/
+
+html,body{
+  padding: 0;
+  margin: 0;
+  background-color: grey;
+}
+
+#navbar {
+  background-color: black;
+  height: 80px;
+}
+
+#signed_in_as{
+  color: white;
+  display: inline-block;
+  font-size: 1.2rem;
+  color: skyblue;
+  position: relative;
+  top: 6px;
+}
+
+#signed_in_as a{
+  color: skyblue;
+}
+
+.nav-link{
+  padding: 10px;
+  background-color: white;
+  font-family: "Comic Sans MS";
+  font-size: 1.5rem;
+  text-decoration: none;
+  display: inline-block;    /* Important */
+  border: 1px solid white;
+  border-radius: 10px;      /* Important */
+  position: relative;       /* Important  use this for vertical allignment */
+  top: 12%;
+}
+
+.nav-link-right{
+  float: right;             /* Important uset this to trafer links to the right */
+  margin: 2px;
+}
+
+.main-wrapper{
+  background-color: #E5CBA9;
+  width: 70%;                 /* Important set width to give better look */
+  margin: auto;               /* Important use this to center middle container */
+  height: 100%;               /* Important use this to make it look better */
+  text-align: center;         /* Important center text using this */
+  border: 2px solid blue;
+  border-radius: 10px;
+}
+
+.form_errors{
+  color: red;
+  margin: auto;
+}
+
+li{
+  list-style-type: none;      /* Important use this to remove list bullets and numbers */
+}

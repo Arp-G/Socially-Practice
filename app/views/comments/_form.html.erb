@@ -1,0 +1,28 @@
+
+<div class="form_errors">
+
+	<% if @comment.errors.count > 0 %>
+
+		<b> <%= pluralize(@post.errors.count,"error") %> </b> prevented the comment from being saved 
+
+		<ul>
+			<% @comment.errors.full_messages.each do |msg| %>
+				<li> <%= msg %> </li>
+			<% end %>
+		</ul>
+		
+	<% end %>
+
+</div>
+
+<%= form_for [@post,@comment] do |f| %>
+
+	<p>
+		<%= f.text_area :content , placeholder: "Write your comment here..." %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>

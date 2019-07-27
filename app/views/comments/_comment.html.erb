@@ -1,0 +1,15 @@
+<div class="comment">
+	<div class = "comment_author"> <strong> <%= comment.user.name %> </strong> commented... </div>
+	<div class = "comment_body"> <%= comment.content %> </div>
+	<div class = "comment_time"> Posted <%= time_ago_in_words(comment.created_at) %> ago </div>
+
+	<div class = "comment_links">
+		<% if current_user and comment.user_id == current_user.id %>
+			<%= link_to "Edit" , edit_post_comment_path(@post,comment) %>
+			<%= link_to "delete" , post_comment_path(@post,comment) , method: :delete, data: { confirm: "Are you sure ?" } %>
+		<% end %>
+	</div> 
+
+</div>
+
+<hr>
