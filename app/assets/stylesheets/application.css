@@ -31,7 +31,7 @@ html,body{
 .nav-link{
   padding: 10px;
   background-color: white;
-  font-family: "Comic Sans MS";
+  font-family: "Comic Sans MS"; /* Makes text look better */
   font-size: 1.5rem;
   text-decoration: none;
   display: inline-block;    /* Important */
